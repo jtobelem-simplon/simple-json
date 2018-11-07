@@ -2,7 +2,9 @@
 
 A simple way to get and parse a json result from a rest api. 
 
-Different library are used : 
+Try import gradle project from eclipse.
+
+Different libraries are used (all in the directory lib) : 
 
 #### jackson 
 https://github.com/FasterXML/jackson-core
@@ -19,5 +21,3 @@ http://www.java2s.com/Code/Jar/j/Downloadjavajsonjar.htm
 https://commons.apache.org/proper/commons-io/download_io.cgi
 
 Choose what you want.
-
-Try import gradle project from eclipse.
