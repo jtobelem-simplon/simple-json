@@ -1,6 +1,7 @@
 package standard;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -13,7 +14,7 @@ public class Main {
 	
 	
 	
-	public static InputStreamReader jsonStreamFromUrl(String sURL) throws Exception {
+	public static InputStreamReader jsonStreamFromUrl(String sURL) throws IOException {
 	    // Connect to the URL using java's native library
 	    URL url = new URL(sURL);
 	    URLConnection request = url.openConnection();

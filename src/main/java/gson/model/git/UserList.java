@@ -1,10 +1,10 @@
-package gson.gitResult.model;
+package gson.model.git;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 
-public class Result {
+public class UserList {
 	private Integer total_count;
 	private Boolean incomplete_results;
 	private List<User> items;

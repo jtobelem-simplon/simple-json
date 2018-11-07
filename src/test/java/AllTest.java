@@ -3,41 +3,33 @@
  */
 import static org.junit.Assert.assertEquals;
 
-import java.io.InputStreamReader;
+import java.io.IOException;
+import java.net.MalformedURLException;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
 public class AllTest {
 	@Test 
-	public void testApacheJson() throws Exception {
-		String jsonText = apache.Main.jsonTextFromUrl(requetes.Main.GIT);
-
-		JSONObject json = new JSONObject(jsonText);
-
-		int totalCount = (int) json.get("total_count");
-
-		assertEquals("apche+json", 5,totalCount);
+	public void testApacheJson() 
+			throws MalformedURLException, IOException, JSONException {
+		
+		assertEquals("apche+json", "4",apache.Main.getField(requetes.Main.GIT, "total_count"));
 	}
-
+	
 	@Test
-	public void testGson() throws Exception {
-		InputStreamReader jsonReader = standard.Main.jsonStreamFromUrl(requetes.Main.GIT);
-
-		// Convert to a JSON object to print data
-		JsonParser jp = new JsonParser(); //from gson
-
-
-		JsonElement root = jp.parse(jsonReader); //Convert the input stream to a json element
-		JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object. 
-		int totalCount = rootobj.get("total_count").getAsInt(); //just grab the total_count
-
-		assertEquals("gson", 5,totalCount);
+	public void testGson() throws IOException {
+	
+		assertEquals("gson", "4",gson.Main.getField(requetes.Main.GIT, "total_count"));
 	}
+	
+	@Test
+	public void testJackson() throws IOException {
+		
+		assertEquals("jackson", "4",jackson.Main.getField(requetes.Main.GIT, "total_count"));
+	}
+	
 	
 	@Test
 	public void testJson() throws Exception {
@@ -47,6 +39,6 @@ public class AllTest {
 
 		int totalCount = (int) json.get("total_count");
 
-		assertEquals("json", 5,totalCount);
+		assertEquals("json", 4,totalCount);
 	}
 }

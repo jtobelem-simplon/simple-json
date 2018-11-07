@@ -1,4 +1,4 @@
-package gson.gitResult.model;
+package gson.model.git;
 
 public class User {
 	private String login;

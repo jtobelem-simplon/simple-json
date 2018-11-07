@@ -39,5 +39,9 @@ dependencies {
     implementation 'common.google.gson:gson:2.8.5'
     implementation 'org.apache.commons.io:commons-io:2.6'
     implementation 'org.json:java-json:1.0'
+    
+    implementation 'com.fasterxml.jackson.core:2.9.7' 
+    implementation 'com.fasterxml.jackson.annotation:2.9'
+    implementation 'com.fasterxml.jackson.databind:2.9.7'
 }
 
